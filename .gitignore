@@ -1,0 +1,11 @@
+/runtime/
+/vendor/
+.env
+*.tar.gz
+/download/
+/public/downloads/
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.log

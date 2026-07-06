@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" width="400" height="400">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#06061a"/><stop offset="50%" stop-color="#0a0a22"/><stop offset="100%" stop-color="#061a0a"/>
+    </linearGradient>
+    <linearGradient id="bodyG" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#1e1e3a"/><stop offset="100%" stop-color="#0e0e1e"/>
+    </linearGradient>
+    <linearGradient id="fanG" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#00ffaa"/><stop offset="100%" stop-color="#00ffe6"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0%" stop-color="#00ffaa" stop-opacity="0.2"/><stop offset="100%" stop-color="#00ffaa" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="g"><feGaussianBlur stdDeviation="3"/><feMerge><feMergeNode in="g"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+    <filter id="g2"><feGaussianBlur stdDeviation="6"/><feMerge><feMergeNode in="g2"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+    <filter id="drop"><feDropShadow dx="0" dy="0" stdDeviation="4" flood-color="#00ffaa" flood-opacity="0.12"/></filter>
+    <style>
+      @keyframes f1 { to { transform: rotate(360deg); } }
+      @keyframes f2 { to { transform: rotate(-360deg); } }
+      @keyframes f3 { to { transform: rotate(360deg); } }
+      @keyframes p1 { 0%,100% { opacity:0.2 } 50% { opacity:1 } }
+      @keyframes p2 { 0%,100% { opacity:0.4 } 50% { opacity:0.9 } }
+      @keyframes scan { to { transform: translateY(500%); } }
+      @keyframes hb { 0% { width:10% } 30% { width:85% } 60% { width:30% } 100% { width:10% } }
+      @keyframes pw { 0% { width:20% } 50% { width:95% } 100% { width:20% } }
+      @keyframes df { to { stroke-dashoffset:-48 } }
+      @keyframes pt { 0% { transform:translateY(0);opacity:0.6 } 100% { transform:translateY(-30px);opacity:0 } }
+      .fL { animation: f1 2.5s linear infinite; transform-origin:105px 225px }
+      .fR { animation: f2 3.2s linear infinite; transform-origin:295px 225px }
+      .fB { animation: f3 4s linear infinite; transform-origin:200px 333px }
+      .l1 { animation: p1 0.8s ease-in-out infinite }
+      .l2 { animation: p2 1.5s ease-in-out infinite }
+      .l3 { animation: p1 2s ease-in-out infinite }
+      .sc { animation: scan 3.5s linear infinite }
+      .hb { animation: hb 6s ease-in-out infinite }
+      .pw { animation: pw 5s ease-in-out infinite }
+      .df { animation: df 2s linear infinite; stroke-dasharray:4 8 }
+      .pt { animation: pt 1.8s ease-out infinite }
+    </style>
+  </defs>
+  <rect width="400" height="400" rx="24" fill="url(#bg)"/>
+  <circle cx="200" cy="170" r="100" fill="url(#glow)"/>
+  <rect x="50" y="75" width="300" height="190" rx="14" fill="url(#bodyG)" stroke="#3a3a5a" stroke-width="1.5" filter="url(#drop)"/>
+  <rect x="55" y="80" width="290" height="180" rx="12" fill="none" stroke="#2a2a4a" stroke-width="0.5"/>
+  <g stroke="#1a1a30" stroke-width="1.5" opacity="0.8">
+    <line x1="70" y1="90" x2="145" y2="90"/>
+    <line x1="70" y1="100" x2="145" y2="100"/>
+    <line x1="220" y1="90" x2="320" y2="90"/>
+    <line x1="220" y1="100" x2="320" y2="100"/>
+  </g>
+  <circle cx="75" cy="92" r="3" fill="#00ffaa" class="l1" filter="url(#g)"/>
+  <circle cx="87" cy="92" r="3" fill="#00ffe6" class="l2" filter="url(#g)"/>
+  <circle cx="99" cy="92" r="3" fill="#ffcc00" class="l3" filter="url(#g)"/>
+  <circle cx="285" cy="92" r="3" fill="#00ffaa" class="l2" filter="url(#g)"/>
+  <circle cx="300" cy="92" r="3" fill="#ff4444" class="l1" filter="url(#g)"/>
+      <rect x="90" y="130" width="110" height="50" rx="5" fill="#050510" stroke="#00ffaa" stroke-width="0.8"/>
+      <rect x="98" y="138" width="94" height="34" rx="3" fill="#0d0d22" stroke="#00ffaa" stroke-width="0.4"/>
+      <text x="145" y="159" fill="#00ffaa" font-family="monospace" font-size="9" text-anchor="middle" font-weight="bold">CPU 1</text>
+      <rect x="200" y="130" width="110" height="50" rx="5" fill="#050510" stroke="#00ffe6" stroke-width="0.8"/>
+      <rect x="208" y="138" width="94" height="34" rx="3" fill="#0d0d22" stroke="#00ffe6" stroke-width="0.4"/>
+      <text x="255" y="159" fill="#00ffe6" font-family="monospace" font-size="9" text-anchor="middle" font-weight="bold">CPU 2</text>
+  <g stroke="#00ffaa" stroke-width="0.8" opacity="0.35" class="df">
+    <line x1="90" y1="190" x2="310" y2="190"/>
+    <line x1="90" y1="198" x2="310" y2="198"/>
+  </g>
+  <circle cx="105" cy="225" r="28" fill="#060620" stroke="#00ffaa" stroke-width="1.5"/>
+  <g class="fL">
+    <ellipse cx="105" cy="202" rx="5" ry="19" fill="url(#fanG)" opacity="0.8"/>
+    <ellipse cx="105" cy="248" rx="5" ry="19" fill="url(#fanG)" opacity="0.8"/>
+    <ellipse cx="82" cy="225" rx="19" ry="5" fill="url(#fanG)" opacity="0.5"/>
+    <circle cx="105" cy="225" r="3" fill="#fff" opacity="0.3"/>
+  </g>
+  <circle cx="295" cy="225" r="28" fill="#060620" stroke="#00ffaa" stroke-width="1.5"/>
+  <g class="fR">
+    <ellipse cx="295" cy="202" rx="5" ry="19" fill="url(#fanG)" opacity="0.8"/>
+    <ellipse cx="295" cy="248" rx="5" ry="19" fill="url(#fanG)" opacity="0.8"/>
+    <ellipse cx="272" cy="225" rx="19" ry="5" fill="url(#fanG)" opacity="0.5"/>
+    <circle cx="295" cy="225" r="3" fill="#fff" opacity="0.3"/>
+  </g>
+  <g filter="url(#g2)">
+    <rect x="50" y="268" width="300" height="60" rx="8" fill="#060612" stroke="#2a2a4a" stroke-width="1"/>
+    <text x="200" y="288" fill="#00ffaa" font-family="monospace" font-size="14" text-anchor="middle" font-weight="bold">H21E - 13.5 TH/s</text>
+    <rect x="80" y="298" width="240" height="8" rx="4" fill="#111122"/>
+    <rect x="80" y="298" width="132" height="8" rx="4" fill="#00ffaa" opacity="0.85" filter="url(#g)" class="hb"/>
+    <text x="80" y="316" fill="#00ffaa" font-family="monospace" font-size="9">A: 99.8%</text>
+    <text x="160" y="316" fill="#00ffe6" font-family="monospace" font-size="9">DAILY: 13/d</text>
+    <text x="230" y="316" fill="#ff4444" font-family="monospace" font-size="9">R: 0.02%</text>
+  </g>
+  <rect x="50" y="340" width="300" height="40" rx="8" fill="#0a0a16" stroke="#2a2a3a" stroke-width="0.8"/>
+  <text x="80" y="366" fill="#777" font-family="monospace" font-size="10">TEMP: 58&#176;C</text>
+  <text x="150" y="366" fill="#777" font-family="monospace" font-size="10">FAN: 7,200 RPM</text>
+  <text x="220" y="366" fill="#777" font-family="monospace" font-size="10">PWR: 1.8 kW</text>
+  <rect x="80" y="372" width="240" height="4" rx="2" fill="#1a1a2a"/>
+  <rect x="80" y="372" width="180" height="4" rx="2" fill="#ffcc00" filter="url(#g)" class="pw"/>
+
+  <g fill="#00ffaa" opacity="0.5" filter="url(#g)">
+    <circle cx="80" cy="135" r="2" class="pt" style="animation-delay:0s"/>
+    <circle cx="320" cy="120" r="1.5" class="pt" style="animation-delay:0.6s"/>
+    <circle cx="200" cy="155" r="1.8" class="pt" style="animation-delay:1.2s"/>
+  </g>
+  <rect x="0" y="0" width="400" height="2" fill="#00ffaa" opacity="0.08" class="sc"/>
+</svg>

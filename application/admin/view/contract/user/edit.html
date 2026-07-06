@@ -1,0 +1,88 @@
+<form id="edit-form" class="form-horizontal" role="form" data-toggle="validator" method="POST" action="">
+
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('用户地址')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-address" class="form-control" name="row[address]" type="text" value="{$row.address}">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('上级数据')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-relation1" class="form-control" name="row[relation1]" type="text" value="{$row.relation}" readonly>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('USDT')}:</label>
+        <div class="col-xs-12 col-sm-4">
+            <input id="c-money" class="form-control" name="row[money]" type="number" value="">
+        </div>
+        <div class="col-xs-12 col-sm-4">
+            <span class="form-control">当前USDT余额：{$row.money}</span>
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('OCE')}:</label>
+        <div class="col-xs-12 col-sm-4">
+            <input id="c-balance" class="form-control" name="row[balance]" type="number" >
+        </div>
+        <div class="col-xs-12 col-sm-4">
+            <span class="form-control">当前OCE余额：{$row.balance}</span>
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">SOCE:</label>
+        <div class="col-xs-12 col-sm-4">
+            <input id="c-soce" class="form-control" name="row[soce]" type="number" step="0.00000001">
+        </div>
+        <div class="col-xs-12 col-sm-4">
+            <span class="form-control">当前SOCE余额：{$row.soce|default='0.00000000'}</span>
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('信用额度')}:</label>
+        <div class="col-xs-12 col-sm-4">
+            <input id="c-point" class="form-control" name="row[point]" type="number" >
+        </div>
+        <div class="col-xs-12 col-sm-4">
+            <span class="form-control">当前信用额度余额：{$row.point}</span>
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('奖励余额')}:</label>
+        <div class="col-xs-12 col-sm-4">
+            <input id="c-amount" class="form-control" name="row[amount]" type="number" >
+        </div>
+        <div class="col-xs-12 col-sm-4">
+            <span class="form-control">当前奖励余额余额：{$row.amount}</span>
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('涡轮值')}:</label>
+        <div class="col-xs-12 col-sm-4">
+            <input id="c-direct" class="form-control" name="row[direct]" type="number" >
+        </div>
+        <div class="col-xs-12 col-sm-4">
+            <span class="form-control">当前涡轮值余额：{$row.direct}</span>
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">状态:</label>
+        <div class="col-xs-12 col-sm-8">
+            {:build_radios('row[status]', ['1'=>'正常', '0'=>'锁定'], $row.status)}
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">节点权益:</label>
+        <div class="col-xs-12 col-sm-8">
+            {:build_radios('row[node]', ['1'=>'开启', '0'=>'关闭'], $row.node)}
+        </div>
+    </div>
+    <div class="form-group layer-footer">
+        <label class="control-label col-xs-12 col-sm-2"></label>
+        <div class="col-xs-12 col-sm-8">
+            <button type="submit" class="btn btn-primary btn-embossed disabled">{:__('OK')}</button>
+        </div>
+    </div>
+</form>

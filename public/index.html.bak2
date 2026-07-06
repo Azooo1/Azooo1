@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="zh" class="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/png" href="/favicon.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" />
+    <meta name="description" content="安全高效的加密货币云算力挖矿平台" />
+    <title>HEC Mining - 云算力挖矿平台</title>
+    <script type="module" crossorigin src="/hec-assets/index-Dqs8SrhP.js"></script>
+    <link rel="modulepreload" crossorigin href="/hec-assets/utils-62W0Csdc.js">
+    <link rel="modulepreload" crossorigin href="/hec-assets/sha3-DwM1J5AV.js">
+    <link rel="stylesheet" crossorigin href="/hec-assets/index-C0EUgxP4.css">
+  </head>
+  <body>
+    <div id="root"></div>
+  
+<script>
+(function(){
+  var tries = 0;
+  var check = setInterval(function(){
+    tries++;
+    var btns = document.querySelectorAll('button[aria-label=play]');
+    if (btns.length > 0 || tries > 30) {
+      clearInterval(check);
+      btns.forEach(function(btn){
+        if (btn._patched) return;
+        btn._patched = true;
+        btn.addEventListener('click', function(){
+          var container = this.parentElement;
+          var img = container.querySelector('img');
+          if (img) img.style.display = 'none';
+          this.style.display = 'none';
+          var v = container.querySelector('video');
+          if (!v) {
+            v = document.createElement('video');
+            v.src = '/videos/getting-started.mp4';
+            v.controls = true;
+            v.playsInline = true;
+            v.setAttribute('playsinline', '');
+            v.setAttribute('webkit-playsinline', '');
+            v.autoplay = true;
+            v.style.cssText = 'position:absolute;inset:0;width:100%;height:100%;object-fit:contain;z-index:10;background:#000';
+            container.appendChild(v);
+            v.play().catch(function(){});
+          }
+        });
+      });
+    }
+  }, 500);
+})();
+</script>
+</body>
+</html>

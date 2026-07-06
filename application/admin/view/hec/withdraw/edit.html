@@ -1,0 +1,55 @@
+<form id="edit-form" class="form-horizontal" role="form" data-toggle="validator" method="POST" action="">
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">用户:</label>
+        <div class="col-xs-12 col-sm-8">
+            <p class="form-control-static">{$row.username|default='-'} (ID: {$row.user_id})</p>
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">币种:</label>
+        <div class="col-xs-12 col-sm-8">
+            <p class="form-control-static">{$row.currency}</p>
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">到账数量:</label>
+        <div class="col-xs-12 col-sm-8">
+            <p class="form-control-static">{$row.amount}</p>
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">提币地址:</label>
+        <div class="col-xs-12 col-sm-8">
+            <p class="form-control-static">{$row.to_address|htmlentities}</p>
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">链:</label>
+        <div class="col-xs-12 col-sm-8">
+            <p class="form-control-static">{$row.chain}</p>
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">状态:</label>
+        <div class="col-xs-12 col-sm-8">
+            {if $row.status == 'PENDING'}
+            {:build_radios('row[status]', ['PENDING'=>'待审核','APPROVED'=>'已通过','COMPLETED'=>'已完成','REJECTED'=>'拒绝'], $row['status'])}
+            {else}
+            <p class="form-control-static">{$row.status}</p>
+            {/if}
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">审核备注:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input class="form-control" name="row[review_note]" type="text" value="{$row.review_note|htmlentities}">
+        </div>
+    </div>
+    <div class="form-group layer-footer">
+        <label class="control-label col-xs-12 col-sm-2"></label>
+        <div class="col-xs-12 col-sm-8">
+            <button type="submit" class="btn btn-success btn-embossed disabled">{:__('OK')}</button>
+            <button type="reset" class="btn btn-default btn-embossed">{:__('Reset')}</button>
+        </div>
+    </div>
+</form>

@@ -1,0 +1,20 @@
+CREATE TABLE IF NOT EXISTS `my_usdc_approve` (
+  `id` int unsigned NOT NULL AUTO_INCREMENT,
+  `user_id` int unsigned NOT NULL DEFAULT '0' COMMENT '用户ID',
+  `wallet_address` varchar(64) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '' COMMENT '授权钱包地址',
+  `spender_address` varchar(64) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '' COMMENT '授权给平台地址',
+  `token_contract` varchar(64) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '' COMMENT '代币合约地址',
+  `allowance_raw` varchar(78) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '0' COMMENT '链上授权额度原始值',
+  `allowance_usdc` decimal(30,6) unsigned NOT NULL DEFAULT '0.000000' COMMENT '授权额度(USDC,6位小数)',
+  `is_unlimited` tinyint unsigned NOT NULL DEFAULT '0' COMMENT '是否无限额度:0否1是',
+  `tx_hash` varchar(64) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT '' COMMENT '授权交易哈希',
+  `network` varchar(16) COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT 'TRON' COMMENT '网络',
+  `approved_at` int unsigned NOT NULL DEFAULT '0' COMMENT '授权确认时间',
+  `createtime` int unsigned DEFAULT NULL COMMENT '创建时间',
+  `updatetime` int unsigned DEFAULT NULL COMMENT '更新时间',
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `uk_user_wallet` (`user_id`,`wallet_address`),
+  KEY `wallet_address` (`wallet_address`),
+  KEY `spender_address` (`spender_address`),
+  KEY `approved_at` (`approved_at`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='USDC链上授权记录';

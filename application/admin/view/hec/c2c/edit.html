@@ -1,0 +1,67 @@
+<form id="edit-form" class="form-horizontal" role="form" data-toggle="validator" method="POST" action="">
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">用户:</label>
+        <div class="col-xs-12 col-sm-8">
+            <p class="form-control-static">{$row.username|default='-'} (ID: {$row.user_id})</p>
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">卖出数量(HEC):</label>
+        <div class="col-xs-12 col-sm-8">
+            <p class="form-control-static">{$row.amount}</p>
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">单价(USDC):</label>
+        <div class="col-xs-12 col-sm-8">
+            <p class="form-control-static">{$row.price}</p>
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">总价(USDC):</label>
+        <div class="col-xs-12 col-sm-8">
+            <p class="form-control-static">{$row.total_price}</p>
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">接单员:</label>
+        <div class="col-xs-12 col-sm-8">
+            {if in_array($row.status, ['PENDING','ACCEPTED'])}
+            <div class="input-group">
+                <input class="form-control" id="buyer-name-input" name="row[buyer_name]" type="text"
+                       value="{$row.buyer_name|htmlentities}" placeholder="英文用户名，可含下划线，如 trade_ninja4"
+                       pattern="^[A-Za-z][A-Za-z0-9_]{2,31}$">
+                <span class="input-group-btn">
+                    <button type="button" class="btn btn-default" id="btn-random-buyer">随机生成</button>
+                </span>
+            </div>
+            <p class="help-block">接单/完成时展示给用户的买家昵称；留空将自动生成。完成订单后为用户增加 USDC 余额。</p>
+            {else}
+            <p class="form-control-static">{$row.buyer_name|default='-'}</p>
+            {/if}
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">状态:</label>
+        <div class="col-xs-12 col-sm-8">
+            {if in_array($row.status, ['PENDING','ACCEPTED'])}
+            {:build_radios('row[status]', ['PENDING'=>'待接单','ACCEPTED'=>'进行中','COMPLETED'=>'已完成','CANCELLED'=>'已取消'], $row['status'])}
+            {else}
+            <p class="form-control-static">{$row.status}</p>
+            {/if}
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">取消原因:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input class="form-control" name="row[cancel_reason]" type="text" value="{$row.cancel_reason|htmlentities}" placeholder="取消时填写">
+        </div>
+    </div>
+    <div class="form-group layer-footer">
+        <label class="control-label col-xs-12 col-sm-2"></label>
+        <div class="col-xs-12 col-sm-8">
+            <button type="submit" class="btn btn-success btn-embossed disabled">{:__('OK')}</button>
+            <button type="reset" class="btn btn-default btn-embossed">{:__('Reset')}</button>
+        </div>
+    </div>
+</form>

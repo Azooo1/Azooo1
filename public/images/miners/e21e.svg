@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500" width="500" height="500">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#06061a"/><stop offset="50%" stop-color="#0a0a22"/><stop offset="100%" stop-color="#061a0a"/>
+    </linearGradient>
+    <linearGradient id="bodyG" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#1e1e3a"/><stop offset="100%" stop-color="#0e0e1e"/>
+    </linearGradient>
+    <linearGradient id="fanG" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#00ccff"/><stop offset="100%" stop-color="#00e0ff"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0%" stop-color="#00ccff" stop-opacity="0.2"/><stop offset="100%" stop-color="#00ccff" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="g"><feGaussianBlur stdDeviation="3"/><feMerge><feMergeNode in="g"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+    <filter id="g2"><feGaussianBlur stdDeviation="6"/><feMerge><feMergeNode in="g2"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+    <filter id="drop"><feDropShadow dx="0" dy="0" stdDeviation="4" flood-color="#00ccff" flood-opacity="0.12"/></filter>
+    <style>
+      @keyframes f1 { to { transform: rotate(360deg); } }
+      @keyframes f2 { to { transform: rotate(-360deg); } }
+      @keyframes f3 { to { transform: rotate(360deg); } }
+      @keyframes p1 { 0%,100% { opacity:0.2 } 50% { opacity:1 } }
+      @keyframes p2 { 0%,100% { opacity:0.4 } 50% { opacity:0.9 } }
+      @keyframes scan { to { transform: translateY(500%); } }
+      @keyframes hb { 0% { width:10% } 30% { width:85% } 60% { width:30% } 100% { width:10% } }
+      @keyframes pw { 0% { width:20% } 50% { width:95% } 100% { width:20% } }
+      @keyframes df { to { stroke-dashoffset:-48 } }
+      @keyframes pt { 0% { transform:translateY(0);opacity:0.6 } 100% { transform:translateY(-30px);opacity:0 } }
+      .fL { animation: f1 2.5s linear infinite; transform-origin:130px 280px }
+      .fR { animation: f2 3.2s linear infinite; transform-origin:369px 280px }
+      .fB { animation: f3 4s linear infinite; transform-origin:250px 415px }
+      .l1 { animation: p1 0.8s ease-in-out infinite }
+      .l2 { animation: p2 1.5s ease-in-out infinite }
+      .l3 { animation: p1 2s ease-in-out infinite }
+      .sc { animation: scan 3.5s linear infinite }
+      .hb { animation: hb 6s ease-in-out infinite }
+      .pw { animation: pw 5s ease-in-out infinite }
+      .df { animation: df 2s linear infinite; stroke-dasharray:4 8 }
+      .pt { animation: pt 1.8s ease-out infinite }
+    </style>
+  </defs>
+  <rect width="500" height="500" rx="24" fill="url(#bg)"/>
+  <circle cx="250" cy="211" r="100" fill="url(#glow)"/>
+  <rect x="62" y="93" width="375" height="237" rx="14" fill="url(#bodyG)" stroke="#3a3a5a" stroke-width="1.5" filter="url(#drop)"/>
+  <rect x="67" y="98" width="365" height="227" rx="12" fill="none" stroke="#2a2a4a" stroke-width="0.5"/>
+  <g stroke="#1a1a30" stroke-width="1.5" opacity="0.8">
+    <line x1="87" y1="112" x2="181" y2="112"/>
+    <line x1="87" y1="125" x2="181" y2="125"/>
+    <line x1="275" y1="112" x2="400" y2="112"/>
+    <line x1="275" y1="125" x2="400" y2="125"/>
+  </g>
+  <circle cx="93" cy="115" r="3" fill="#00ccff" class="l1" filter="url(#g)"/>
+  <circle cx="108" cy="115" r="3" fill="#00e0ff" class="l2" filter="url(#g)"/>
+  <circle cx="123" cy="115" r="3" fill="#ffcc00" class="l3" filter="url(#g)"/>
+  <circle cx="372" cy="115" r="3" fill="#00ccff" class="l2" filter="url(#g)"/>
+  <circle cx="387" cy="115" r="3" fill="#ff4444" class="l1" filter="url(#g)"/>
+      <rect x="112" y="162" width="68" height="62" rx="5" fill="#050510" stroke="#00ccff" stroke-width="0.8"/>
+      <rect x="120" y="170" width="52" height="46" rx="3" fill="#0d0d22" stroke="#00ccff" stroke-width="0.4"/>
+      <text x="146" y="197" fill="#00ccff" font-family="monospace" font-size="11" text-anchor="middle" font-weight="bold">GPU 1</text>
+      <rect x="180" y="162" width="68" height="62" rx="5" fill="#050510" stroke="#00e0ff" stroke-width="0.8"/>
+      <rect x="188" y="170" width="52" height="46" rx="3" fill="#0d0d22" stroke="#00e0ff" stroke-width="0.4"/>
+      <text x="214" y="197" fill="#00e0ff" font-family="monospace" font-size="11" text-anchor="middle" font-weight="bold">GPU 2</text>
+      <rect x="248" y="162" width="68" height="62" rx="5" fill="#050510" stroke="#ffcc00" stroke-width="0.8"/>
+      <rect x="256" y="170" width="52" height="46" rx="3" fill="#0d0d22" stroke="#ffcc00" stroke-width="0.4"/>
+      <text x="282" y="197" fill="#ffcc00" font-family="monospace" font-size="11" text-anchor="middle" font-weight="bold">GPU 3</text>
+      <rect x="316" y="162" width="68" height="62" rx="5" fill="#050510" stroke="#ff00aa" stroke-width="0.8"/>
+      <rect x="324" y="170" width="52" height="46" rx="3" fill="#0d0d22" stroke="#ff00aa" stroke-width="0.4"/>
+      <text x="350" y="197" fill="#ff00aa" font-family="monospace" font-size="11" text-anchor="middle" font-weight="bold">GPU 4</text>
+  <g stroke="#00ccff" stroke-width="0.8" opacity="0.35" class="df">
+    <line x1="112" y1="236" x2="384" y2="236"/>
+    <line x1="112" y1="246" x2="384" y2="246"/>
+  </g>
+  <circle cx="130" cy="280" r="35" fill="#060620" stroke="#00ccff" stroke-width="1.5"/>
+  <g class="fL">
+    <ellipse cx="130" cy="250" rx="6" ry="24" fill="url(#fanG)" opacity="0.8"/>
+    <ellipse cx="130" cy="310" rx="6" ry="24" fill="url(#fanG)" opacity="0.8"/>
+    <ellipse cx="100" cy="280" rx="24" ry="6" fill="url(#fanG)" opacity="0.5"/>
+    <circle cx="130" cy="280" r="3" fill="#fff" opacity="0.3"/>
+  </g>
+  <circle cx="369" cy="280" r="35" fill="#060620" stroke="#00ccff" stroke-width="1.5"/>
+  <g class="fR">
+    <ellipse cx="369" cy="250" rx="6" ry="24" fill="url(#fanG)" opacity="0.8"/>
+    <ellipse cx="369" cy="310" rx="6" ry="24" fill="url(#fanG)" opacity="0.8"/>
+    <ellipse cx="339" cy="280" rx="24" ry="6" fill="url(#fanG)" opacity="0.5"/>
+    <circle cx="369" cy="280" r="3" fill="#fff" opacity="0.3"/>
+  </g>
+  <g filter="url(#g2)">
+    <rect x="62" y="333" width="375" height="75" rx="8" fill="#060612" stroke="#2a2a4a" stroke-width="1"/>
+    <text x="250" y="353" fill="#00ccff" font-family="monospace" font-size="17" text-anchor="middle" font-weight="bold">E21e - 240 MH/s</text>
+    <rect x="99" y="370" width="300" height="8" rx="4" fill="#111122"/>
+    <rect x="99" y="370" width="165" height="8" rx="4" fill="#00ccff" opacity="0.85" filter="url(#g)" class="hb"/>
+    <text x="99" y="388" fill="#00ccff" font-family="monospace" font-size="11">A: 99.8%</text>
+    <text x="210" y="388" fill="#00e0ff" font-family="monospace" font-size="11">DAILY: 240/d</text>
+    <text x="298" y="388" fill="#ff4444" font-family="monospace" font-size="11">R: 0.02%</text>
+  </g>
+  <rect x="62" y="423" width="375" height="50" rx="8" fill="#0a0a16" stroke="#2a2a3a" stroke-width="0.8"/>
+  <text x="92" y="449" fill="#777" font-family="monospace" font-size="12">TEMP: 62&#176;C</text>
+  <text x="199" y="449" fill="#777" font-family="monospace" font-size="12">FAN: 8,400 RPM</text>
+  <text x="307" y="449" fill="#777" font-family="monospace" font-size="12">PWR: 2.4 kW</text>
+  <rect x="92" y="465" width="315" height="4" rx="2" fill="#1a1a2a"/>
+  <rect x="92" y="465" width="236" height="4" rx="2" fill="#ffcc00" filter="url(#g)" class="pw"/>
+      <circle cx="250" cy="415" r="35" fill="#060620" stroke="#00ccff" stroke-width="1.5"/>
+      <g class="fB"><ellipse cx="250" cy="385" rx="6" ry="18" fill="url(#fanG)" opacity="0.6"/><ellipse cx="250" cy="445" rx="6" ry="18" fill="url(#fanG)" opacity="0.6"/><ellipse cx="220" cy="415" rx="18" ry="6" fill="url(#fanG)" opacity="0.4"/><circle cx="250" cy="415" r="3.5" fill="#fff" opacity="0.3"/></g>
+  <g fill="#00ccff" opacity="0.5" filter="url(#g)">
+    <circle cx="92" cy="153" r="2" class="pt" style="animation-delay:0s"/>
+    <circle cx="407" cy="138" r="1.5" class="pt" style="animation-delay:0.6s"/>
+    <circle cx="250" cy="173" r="1.8" class="pt" style="animation-delay:1.2s"/>
+  </g>
+  <rect x="0" y="0" width="500" height="2" fill="#00ccff" opacity="0.08" class="sc"/>
+</svg>
