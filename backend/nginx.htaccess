@@ -1,0 +1,8 @@
+# 与 public/hec-spa.rewrite.conf 相同
+location ^~ /api/ {
+    rewrite ^/(.*)$ /index.php?s=/$1 last;
+}
+
+location / {
+    try_files $uri $uri/ /index.html;
+}

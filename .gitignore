@@ -1,0 +1,12 @@
+node_modules/
+vendor/
+*.zip
+*.log
+/tmp/
+*.sql
+.DS_Store
+frontend/.env
+frontend/.env.*
+backend/.env
+Users/
+runtime/

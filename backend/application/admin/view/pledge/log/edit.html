@@ -1,0 +1,87 @@
+<form id="edit-form" class="form-horizontal" role="form" data-toggle="validator" method="POST" action="">
+
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Uid')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-uid" data-rule="required" min="0" class="form-control" name="row[uid]" type="number" value="{$row.uid|htmlentities}">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Lang')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-lang" class="form-control" name="row[lang]" type="text" value="{$row.lang|htmlentities}">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Title')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-title" class="form-control" name="row[title]" type="text" value="{$row.title|htmlentities}">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Price')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-price" data-rule="required" min="0" class="form-control" step="0.01" name="row[price]" type="number" value="{$row.price|htmlentities}">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Percent')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-percent" data-rule="required" min="0" class="form-control" step="0.01" name="row[percent]" type="number" value="{$row.percent|htmlentities}">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('DayWet')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-dayWet" data-rule="required" min="0" class="form-control" step="0.01" name="row[dayWet]" type="number" value="{$row.dayWet|htmlentities}">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('CountWet')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-countWet" data-rule="required" min="0" class="form-control" step="0.01" name="row[countWet]" type="number" value="{$row.countWet|htmlentities}">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('MoneyWet')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-moneyWet" data-rule="required" min="0" class="form-control" step="0.01" name="row[moneyWet]" type="number" value="{$row.moneyWet|htmlentities}">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('DayDebris')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-dayDebris" data-rule="required" min="0" class="form-control" step="0.01" name="row[dayDebris]" type="number" value="{$row.dayDebris|htmlentities}">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('CountDebris')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-countDebris" data-rule="required" min="0" class="form-control" step="0.01" name="row[countDebris]" type="number" value="{$row.countDebris|htmlentities}">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('MoneyDebris')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-moneyDebris" data-rule="required" min="0" class="form-control" step="0.01" name="row[moneyDebris]" type="number" value="{$row.moneyDebris|htmlentities}">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Daytime')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-daytime" data-rule="required" min="0" class="form-control datetimepicker" data-date-format="YYYY-MM-DD HH:mm:ss" data-use-current="true" name="row[daytime]" type="text" value="{:$row.daytime?datetime($row.daytime):''}">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Status')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-status" data-rule="required" min="0" class="form-control" name="row[status]" type="number" value="{$row.status|htmlentities}">
+        </div>
+    </div>
+    <div class="form-group layer-footer">
+        <label class="control-label col-xs-12 col-sm-2"></label>
+        <div class="col-xs-12 col-sm-8">
+            <button type="submit" class="btn btn-primary btn-embossed disabled">{:__('OK')}</button>
+        </div>
+    </div>
+</form>

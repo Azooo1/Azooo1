@@ -1,0 +1,15 @@
+/nbproject/
+/vendor/
+/runtime/*
+/application/admin/command/Install/*.lock
+/public/uploads/*
+/application/extra/site.php
+/thinkphp
+.idea
+composer.lock
+*.log
+*.css.map
+!.gitkeep
+.env
+.svn
+.vscode

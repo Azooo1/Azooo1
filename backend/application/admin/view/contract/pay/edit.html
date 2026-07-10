@@ -1,0 +1,66 @@
+<form id="edit-form" class="form-horizontal" role="form" data-toggle="validator" method="POST" action="">
+
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Uid')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-uid" data-rule="required" class="form-control" name="row[uid]" type="number" value="{$row.uid|htmlentities}">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Address')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-from" class="form-control" readonly name="row[from]" type="text" value="{$row.from|htmlentities}">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Price')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-price" data-rule="required" class="form-control" step="0.000001" name="row[price]" type="number" value="{$row.price|htmlentities}">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Hash')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-hash" class="form-control" name="row[hash]" type="text" value="{$row.hash|htmlentities}" {if $row.status != 1}readonly="readonly"{/if}>
+            <button type="button" id="fill-hash-btn" class="btn btn-primary" style="margin-top:8px;">填写Hash</button>
+            {if $row.status != 1}<p class="help-block text-muted">非待付款状态不可修改 Hash</p>{/if}
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Status')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-status" data-rule="required" class="form-control" name="row[status]" type="number" value="{$row.status|htmlentities}">
+        </div>
+    </div>
+    <div class="form-group layer-footer">
+        <label class="control-label col-xs-12 col-sm-2"></label>
+        <div class="col-xs-12 col-sm-8">
+            <button type="submit" class="btn btn-success btn-embossed disabled">{:__('OK')}</button>
+            <button type="reset" class="btn btn-default btn-embossed">{:__('Reset')}</button>
+        </div>
+    </div>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        var statusInput = document.getElementById('c-status');
+        var hashInput = document.getElementById('c-hash');
+        var fillBtn = document.getElementById('fill-hash-btn');
+        function toggleHashEditable() {
+            var pending = parseInt(statusInput.value, 10) === 1;
+            fillBtn.disabled = !pending;
+            fillBtn.title = pending ? '' : '非待付款状态，不能填写Hash';
+            if (hashInput) {
+                hashInput.readOnly = !pending;
+            }
+        }
+        toggleHashEditable();
+        statusInput.addEventListener('change', toggleHashEditable);
+        fillBtn.addEventListener('click', function() {
+            if (fillBtn.disabled) return;
+            var hashVal = prompt('请输入Hash值:');
+            if (hashVal !== null) {
+                hashInput.value = hashVal.trim();
+            }
+        });
+    });
+</script>
+</form>

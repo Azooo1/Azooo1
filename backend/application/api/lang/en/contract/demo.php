@@ -1,0 +1,27 @@
+<?php
+
+return [
+  "用户重生扣除手续费%s" => "User regeneration fee %s",
+  "用户重生增加产品%s-%s" => "User regeneration increased product %s-%s",
+  "用户重生扣除产品%s-%s" => "The user regenerates product %s-%s",
+  "用户赠送增加冻结产品%s-%s" => "User giveaway increased frozen product %s-%s",
+  "用户原有产品%s用户赠送扣除产品%s-%s后为%s" => "User original product %s User gift is %s after deducting product %s-%s",
+  "原有%s更新为%s用户接受成功扣除金币%s" => "The original %s is updated to %s. The user accepts the successful deduction of gold %s",
+  "原有产品%s更新后%s用户接受成功增加产品%s-%s" => "After updating the original product %s, the user accepted the addition of product %s-%s",
+  "%s用户接受成功扣除赠送方冻结产品%s-%s" => "%s The user accepts the successful deduction of the donor's frozen product %s-%s",
+  "%s用户赠送成功接受增加金币%s" => "%s User gift successfully accepted increased gold %s",
+  "%s用户撤销成功扣除冻结产品%s-%s" => "%s The user successfully cancels the frozen product %s-%s",
+  "%s用户撤销成功增加产品%s-%s" => "%s The user revocation succeeded in adding %s-%s",
+  "用户提现扣除金币%s" => "User withdrawals deduct gold %s",
+  "用户提现增加冻结金币%s" => "User withdrawal increases frozen gold %s",
+  "%s用户自动退回成功扣除冻结产品%s-%s" => "%s User automatically returns successfully deducted frozen product %s-%s",
+  "%s用户自动退回成功增加产品%s-%s" => "%s The user automatically returns the added product %s-%s",
+  "返佣领取添加金币%s" => "Rebate for added gold %s",
+  "%s用户退回成功扣除冻结产品%s-%s" => "%s The user successfully returned the frozen product %s-%s",
+  "%s用户退回成功增加产品%s-%s" => "%s The user returned the added product %s-%s successfully",
+  "用户金币提现虚拟币操作%s" => "User gold withdrawal virtual currency operation %s",
+  "订单号%s系统退单返回(冻结金币不足)增加金币%s" => "Order number %s System return (not enough frozen gold) added gold %s",
+  "订单号%s系统退单返回(冻结金币不足)扣除冻结金币%s" => "Order number %s System return (not enough frozen gold) deduct frozen gold %s",
+  "订单号%s系统退单返回增加金币%s" => "Order number %s System return return added gold %s",
+  "订单号%s系统退单返回扣除冻结金币%s" => "Order number %s System return minus frozen gold %s",
+];

@@ -1,0 +1,9 @@
+# 与 hec-spa.rewrite.conf 相同（部分面板从此文件读取）
+# API → ThinkPHP
+location ^~ /api/ {
+    rewrite ^/(.*)$ /index.php?s=/$1 last;
+}
+
+location / {
+    try_files $uri $uri/ /index.html;
+}
